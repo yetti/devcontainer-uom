@@ -97,7 +97,7 @@ zinit light starship/starship
 
 # MISE-EN-PLACE
 
-eval "$($HOME/.local/bin/mise activate zsh)"
+# eval "$($HOME/.local/bin/mise activate zsh)"
 
 # ALIASES
 
@@ -121,4 +121,4 @@ export optflags="-Wno-error=implicit-function-declaration"
 
 # yarn global path
 
-export PATH="$HOME/.yarn/bin:$PATH"
+# export PATH="$HOME/.yarn/bin:$PATH"

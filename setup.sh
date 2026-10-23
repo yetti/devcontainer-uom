@@ -1,11 +1,11 @@
 #!/usr/bin/bash
 
 # Setup locales
-echo "en_AU.UTF-8" | sudo tee -a /etc/locale.gen
-export LANGUAGE="en_AU.UTF-8"
-export LC_TYPE="en_AU.UTF-8"
-export LANG="en_AU.UTF-8"
-sudo locale-gen
+# echo "en_AU.UTF-8" | sudo tee -a /etc/locale.gen
+# export LANGUAGE="en_AU.UTF-8"
+# export LC_TYPE="en_AU.UTF-8"
+# export LANG="en_AU.UTF-8"
+# sudo locale-gen
 
 sudo apt-get update
 sudo apt-get upgrade -y
@@ -33,7 +33,7 @@ cp -R .config ~/
 cp -R .aws ~/
 
 # Change default shell to zsh
-sudo chsh -s $(which zsh) vscode
+sudo chsh -s $(which zsh) local-dev
 
 # Install zinit
 # export TERM=xterm-256color
@@ -47,23 +47,23 @@ chmod -R g-w,o-w /home/local-dev/.local/share/zinit
 chown -R local-dev:local-dev /home/local-dev/.local/share/zinit
 
 # Install mise-en-place if it doesn't exist
-cp .tool-versions ~/
-[ -d '~/.local/bin/mise' ] || curl https://mise.run | sh
-ln -s ~/.local/share/mise ~/.asdf
+# cp .tool-versions ~/
+# [ -d '~/.local/bin/mise' ] || curl https://mise.run | sh
+# ln -s ~/.local/share/mise ~/.asdf
 
 # Trust mise config in dotfiles
-~/.local/bin/mise trust ~/dotfiles/.config/mise/config.toml
+# ~/.local/bin/mise trust ~/dotfiles/.config/mise/config.toml
 
 # Activate mise
-~/.local/bin/mise activate zsh
+# ~/.local/bin/mise activate zsh
 
 # Install mise plugins
-~/.local/bin/mise install
+# ~/.local/bin/mise install
 
 # Install pnpm and yarn via corepack
-corepack enable
-corepack prepare pnpm@latest --activate
-corepack prepare yarn@latest --activate
+# corepack enable
+# corepack prepare pnpm@latest --activate
+# corepack prepare yarn@latest --activate
 
 # Install Claude code
 # curl -fsSL https://claude.ai/install.sh | bash
